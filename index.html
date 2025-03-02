@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Dashboard</title>
+    <link rel="stylesheet" href="style.css">  <!-- Link to CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="element"></h1> 
+        <p id="fadeText">You are now an investor in <strong>Movie X</strong>. Track your earnings and updates below.</p>
+        
+        <div class="button-container">
+            <button id="dashboardBtn">Go to my Dashboard</button>
+            <button id="trackBtn">Track My Investment</button> 
+        </div>
+    </div>
+
+    <!-- Typed.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['<strong>🎉 CONGRATULATIONS! 🎉</strong>', '<strong>Welcome to the Investor Family! 💰</strong>'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        });
+
+        // Smooth fade-in effect for the paragraph
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById("fadeText").style.opacity = "1";
+            }, 2000);
+        });
+    </script>
+
+    <!-- Confetti Animation -->
+    <canvas id="confetti"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+    <script>
+        var confettiSettings = { target: 'confetti', max: 100, size: 1.2, animate: true };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    </script>
+
+</body>
+</html>
